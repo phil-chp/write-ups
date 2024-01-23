@@ -1,4 +1,4 @@
-# write-Ups
+# Write-Ups
 
 ## Description
 

@@ -30,10 +30,51 @@ Looking at these packets, we find the ESSID of the network.
 
 ### Cracking SSL
 
-Now we delve into the handshakes, because they are intact we can try to crack the password.
+Let's isolate both 4-way handshakes into a new `.pcap` file so we can try to brute force the password of the network. First let's check if `airodump-ng` can detect the handshakes:
 
-Let's grab both the BSSID and ESSID of the network, then we can isolate the handshakes in a `.pcap` file. And run it trough `aircrack-ng` with `rockyou.txt`.
-After a few minutes, we get the password.
+```bash
+airodump-ng -r handshakes.pcap
+#  CH  0 ][ Elapsed: 0 s ][ 2024-01-23 23:28 ][ Finished reading input file handshakes.pcap.
+
+#  BSSID              PWR  Beacons    #Data, #/s  CH   MB   ENC CIPHER  AUTH ESSID
+
+#  22:C7:12:C7:E2:35    0        0        8    3   6   -1   OPN              <length:  0>
+
+#  BSSID              STATION            PWR   Rate    Lost    Frames  Notes  Probes
+
+#  22:C7:12:C7:E2:35  2A:84:49:AC:F9:D8    0    1 - 1      0        4  EAPOL
+#  22:C7:12:C7:E2:35  D2:67:D1:3F:36:EC    0    1 - 1      0        4  EAPOL
+```
+
+Let's grab both the BSSID (`22:C7:12:C7:E2:35`) and ESSID (`<redacted1>`) of the network and run it through `aircrack-ng` using `rockyou.txt` as the wordlist:
+
+```bash
+aircrack-ng -w rockyou.txt -b "22:C7:12:C7:E2:35" -e "<redacted1>" handshakes.pcap
+# Reading packets, please wait...
+# Opening handshakes.pcap
+# Read 8 packets.
+#
+# 1 potential targets
+#
+#                                Aircrack-ng 1.7
+#
+#       [00:00:04] 33977/14344392 keys tested (7870.89 k/s)
+#
+#       Time left: 30 minutes, 18 seconds                          0.24%
+#
+#                            KEY FOUND! [ <redacted2> ]
+#
+#
+#       Master Key     : A8 3F 1D 1D 1D 1F 2D 06 8E D4 47 CE E9 FD 3A AA
+#                        B2 86 42 89 FA F8 49 93 D7 C1 A0 29 97 3D 44 9F
+#
+#       Transient Key  : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+#                        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+#                        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+#                        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+#
+#       EAPOL HMAC     : C1 0A 70 D9 65 94 5B 57 F2 98 8A E0 FC FD 2B 22
+```
 
 > What's the password to access the WiFi network?\
 > `<redacted2>`
