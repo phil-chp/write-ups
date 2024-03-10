@@ -12,4 +12,4 @@ Unless otherwise stated, all flags present in every write-up will be hidden with
 
 - [HackTheBox](./HackTheBox/README.md)
 - [TryHackMe](./TryHackMe/README.md)
-<!-- - [Ozint](./Ozint/README.md) -->
+- [CTFs](./CTF/README.md)

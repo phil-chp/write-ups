@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  webserver:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      password: "MonkeyBrain"
+      flag: "CSC{FAKE_FLAG}"
+    ports:
+      - "0.0.0.0:80:80"
+      - "5678:5678"
+    networks:
+      - app-network
+
+networks:
+  app-network:

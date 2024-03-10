@@ -1,0 +1,1 @@
+sudo docker build -t paranoia . && sudo docker run --rm -p 0.0.0.0:80:80 -p 5678:5678 -e password="MonkeyBrain" -e flag="CSC{FAKE_FLAG}" paranoia
