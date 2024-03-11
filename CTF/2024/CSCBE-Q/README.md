@@ -1,5 +1,7 @@
 # CSCBE Qualifiers
 
+<img src="assets/rank.png" alt="ranking" width="800px">
+
 ## Web
 
 - ✅ [Gibson ⭐](./Web/Gibson/README.md)
