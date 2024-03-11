@@ -48,23 +48,9 @@ dd if=get_rich_fast.png of=get_rich_fast_tail.png bs=1 skip=1004770
 dd if=get_rich_fast.png of=get_rich_fast_head.png bs=1 count=1004769
 ```
 
-Just to make sure, opening `_head` reveals the original intact image, so `_tail` is indeed hidden data, though it's header is not that of a classic PNG header
+This unfortunately doesn't work, the first file is the one we have from the start, and the second one fully corrupted as it doesn't have the PNG header nor the IHDR chunk.
 
-```bash
-xxd get_rich_fast_tail.png | head
-# 00000000: b619 1b94 216e 3a1a c5f1 fa3e 1e1b 6bd0  ....!n:....>..k.
-# 00000010: cac9 7e60 86d6 b21f 504b 44b0 9dad ac5b  ..~`....PKD....[
-# 00000020: 50c8 ae88 ea03 7814 c6e7 0815 9f8d 816c  P.....x........l
-# 00000030: a800 60d8 533c 588e 2c04 d900 9203 912c  ..`.S<X.,......,
-# 00000040: 7768 b47c a6ac b1cf 315a 7e40 d258 7d6d  wh.|....1Z~@.X}m
-# 00000050: 7fe3 3163 9713 50e1 f809 9176 80cb a892  ..1c..P....v....
-# 00000060: c981 4f06 8880 3a4e 3610 97c7 1eff b5aa  ..O...:N6.......
-# 00000070: c9de 87db c714 4921 5b9b a990 4236 3b27  ......I![...B6;'
-# 00000080: fcd8 5453 2865 62e9 6ee5 224b c78b 6ac8  ..TS(eb.n."K..j.
-# 00000090: e086 0b45 921f 3b59 a061 897c 940b cbd7  ...E..;Y.a.|....
-```
-
-But it contain lots of IDAT chunks and a valid IEND chunk, this is very weird:
+This doesn't appear to be two PNG's stitched together, it's more elaborate, and the second file does appear to be of PNG origin as it contain lots of IDAT chunks and a valid IEND chunk, this is very weird:
 
 ```bash
 strings get_rich_fast_tail.png | sort | uniq -c
@@ -72,7 +58,7 @@ strings get_rich_fast_tail.png | sort | uniq -c
 #    1 IEND
 ```
 
-After looking into this weird occurence, we found [aCropalypse](https://www.wikiwand.com/en/ACropalypse) which was a CVE regarding Cropping/Snipping tools developped by Microsoft (Win10/11) and Google (Pixel phones), in particular, we are interested in the Windows Snipping Tool. This is found in the strings:
+After looking online for references to this sort of event, we found [aCropalypse](https://www.wikiwand.com/en/ACropalypse) which was a CVE regarding Cropping/Snipping tools developped by Microsoft (Win10/11) and Google (Pixel phones), in particular, we are interested in the Windows Snipping Tool. This is mentioned in the strings (we did not see this at first, but while exploring [tweakpng](https://entropymine.com/jason/tweakpng/) we saw a comment on the last valid IDAT chunk which mentioned the snipping tool, we can find this comment in the strings):
 
 ```bash
 strings get_rich_fast.png | grep "Snip"
