@@ -67,4 +67,4 @@ strings get_rich_fast.png | grep "Snip"
 
 Using the [Acropalypse-Multi-Tool](https://github.com/frankthetank-music/Acropalypse-Multi-Tool), we can give it a taller height (2100px for example, the default image is 1636px high) and extract the flag. We used the "Windows 11 Snipping tool" option from the Acropalypse-Multi-Tool:
 
-<img src="./get_rich_fast_recovered.png" alt="get_rich_fast_recovered" width="400px">
+<img src="./get_rich_fast_recovered.jpg" alt="get_rich_fast_recovered" width="400px">

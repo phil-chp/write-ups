@@ -2,7 +2,7 @@
 
 [< Go back](../../README.md)
 
-<img src="assets/rank.png" alt="ranking" width="800px">
+<img src="assets/rank.jpg" alt="ranking" width="800px">
 
 ## Web
 

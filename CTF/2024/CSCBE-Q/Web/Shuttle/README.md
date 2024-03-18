@@ -35,4 +35,4 @@ From this we just add a `&role=admin` to the end of the request data, send the r
 
 And we can see a new special tab appear at the top, clicking on it reveals the flag:
 
-![Admin](assets/admin.png)
+![Admin](assets/admin.jpg)
