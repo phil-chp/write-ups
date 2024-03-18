@@ -1,5 +1,7 @@
 # CSCBE Qualifiers
 
+[< Go back](../../README.md)
+
 <img src="assets/rank.png" alt="ranking" width="800px">
 
 ## Web
