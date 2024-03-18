@@ -4,9 +4,11 @@
 
 ## Description
 
-Pretend it's 1999 and hack the Gibson!
+I made this cool website, but I don't trust any of those lousy package maintainers to handle my password securily.
+So, I developed my own library.
+I know it's security because it uses MFA.
 
-[index.html](./index.html) was provided
+The [paranoid/](./paranoid/) folder was provided and an URL
 
 ## Challenge
 
