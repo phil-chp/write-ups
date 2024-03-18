@@ -12,11 +12,11 @@ The [paranoid/](./paranoid/) folder was provided and an URL
 
 ## Challenge
 
-I've setup a local environment for testing. This will allow us to view customize the server code into a way to helps us debug and create a brute-force tool.
+I've setup a local environment for testing. This will allow us to customize the server code into a way to helps us debug and create a brute-force tool.
 
 I came up with [bruteforce.py](./bruteforce.py) to crack the OTP.
 
-For the first step related to the password cracking, due to the fact there were less limitations, the process is a little bit more straight forward, and I could have adatped my tool to also handle the password cracking, but because of time constraints I rolled with the fact that @vhseffect had already brute forced the password. (i.e. "MonkeyBrain")
+For the first step related to the password cracking, due to the fact there were less limitations, the process is a little bit more straight forward. Because of time constraints I rolled with the fact that @realAlphabet had already manually brute forced the password. (i.e. "MonkeyBrain")
 
 ### Cracking
 
