@@ -2,7 +2,15 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 
 class Server(BaseHTTPRequestHandler):
     def do_GET(self):
+        self.log_request()
+
+    def do_POST(self):
+        self.log_request()
+
+
+    def log_reply(self):
         print(f"Path: {self.path}")
+        print(f"Headers: {self.headers}")
         self.send_response(200)
         self.end_headers()
 
