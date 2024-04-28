@@ -1,0 +1,15 @@
+version: "3"
+services:
+  welcome-admin:
+    build: .
+    image: anssi/fcsc2024-web-welcome-admin:latest
+    ports:
+      - 8000:8000
+
+  welcome-admin-db:
+    image: postgres:latest
+    hostname: welcome-admin-db
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    ports:
+      - 5432:5432

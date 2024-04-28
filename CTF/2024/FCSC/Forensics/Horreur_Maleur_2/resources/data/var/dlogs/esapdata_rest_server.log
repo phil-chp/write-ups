@@ -1,0 +1,34 @@
+binary reloading uWSGI...
+chdir() to /data/var/cores
+closing all non-uwsgi socket fds > 2 (max_fd = 131072)...
+found fd 6 mapped to socket 0 (127.0.0.1:8103)
+running /home/venv3/bin/uwsgi
+*** Starting uWSGI 2.0.9 (32bit) on [Fri Mar 15 06:33:08 2024] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-3) on 05 December 2022 09:48:31
+os: Linux-4.15.18.34-production #1 SMP Fri Jun 17 13:08:47 UTC 2022
+nodename: localhost2
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /data/var/cores
+detected binary path: /home/venv3/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 55987
+your memory page size is 4096 bytes
+detected max file descriptor number: 131072
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 127.0.0.1:8103 fd 6
+Python version: 3.6.2 (default, May 18 2018, 05:16:42)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-3)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x9d90000
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 127976 bytes (124 KB) for 1 cores
+*** Operational MODE: single process ***
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 6140)
+spawned uWSGI worker 1 (pid: 22086, cores: 1)
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x9d90000 pid: 22086 (default app)

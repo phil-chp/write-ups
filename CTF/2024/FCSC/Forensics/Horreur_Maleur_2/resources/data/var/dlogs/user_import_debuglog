@@ -1,0 +1,1 @@
+2024/03/15 03:48:17.958291 dslog(4118) vc0  0  dslog.cc:792 - debuglog settings changed: -off -level 0 -size 20 -events blank -files blank -pids blank -procs blank -ivs blank -user -stdout -sync -terse +logon 
