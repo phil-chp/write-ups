@@ -1,4 +1,4 @@
-# Cyber Apocalypse
+# HackTheBox - Cyber Apocalypse
 
 [< Go back](../../README.md)
 

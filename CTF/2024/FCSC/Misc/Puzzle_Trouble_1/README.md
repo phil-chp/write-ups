@@ -9,5 +9,3 @@ On vous demande de retrouver le flag dans ce bazar de tuiles ! Il paraît qu'ell
 all files in [resources/](./resources) were provided.
 
 ## Challenge
-
-aled

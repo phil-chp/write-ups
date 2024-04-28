@@ -1,4 +1,4 @@
-# Welcome Admin 2/2 ⭐
+# Welcome Admin 1 & 2 ⭐
 
 [< Go back](../../README.md)
 
