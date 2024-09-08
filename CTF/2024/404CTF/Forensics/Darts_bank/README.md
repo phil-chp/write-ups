@@ -12,7 +12,7 @@ Investiguez la capture réseau fournie et retrouvez le flag qui est au format ha
 
 MD5 dart.pcapng: `a5d6bb16aaebbaae69de51ba653aa358`
 
-all files in [resources/](./resources) were provided.
+all files in [resources/](./resources) were provided. (EDIT: deleted for size constraints, it was a pcapng)
 
 ## Challenge
 
