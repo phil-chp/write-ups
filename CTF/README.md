@@ -8,6 +8,7 @@ CTFs write-ups I've done over the years.
 
 | Year | CTF | Ranking | Team? |
 | ---- | --- | ------: | ------- |
+| 2024 | [HeroCTF v6](./2024/HeroCTF_v6/README.md)                     | 66/914    | MyLittlePwnies |
 | 2024 | [404CTF](./2024/404CTF/README.md)                             | ~300/3800 | |
 | 2024 | [Midnight Flag (Qualifiers)](./2024/MidnightFlag-Q/README.md) | 19/88     | MyLittlePwnies |
 | 2024 | [FCSC](./2024/FCSC/README.md)                                 | 804/1434  |  |
