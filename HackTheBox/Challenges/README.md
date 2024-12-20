@@ -16,6 +16,11 @@ Due to strict rules on the HackTheBox platform, I will not be posting any writeu
 
 ## Challenges
 
+### Mobile
+
+- 🟡 [Pinned](./Mobile/Pinned/README.md)
+- 🟡 [FastJson and Furious](./Mobile/FastJson_and_Furious/README.md)
+
 ## Awaiting archival
 
 ### Reverse
