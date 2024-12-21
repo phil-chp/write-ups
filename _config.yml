@@ -19,11 +19,11 @@
 # in the templates via {{ site.myvariable }}.
 
 # URL is the base hostname with protocol for your site, eg http://example.com
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://phil-chp.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 # If you want to install this jekyll in a subpath (eg /digitalgarden) set it here.
 # Else keep it Empty (DON'T PUT /; Keep it empty)
-baseurl: "."
+baseurl: "/write-ups"
 
 destination         : ./_site
 
