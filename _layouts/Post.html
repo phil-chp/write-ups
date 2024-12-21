@@ -59,7 +59,7 @@
     <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet" media="all" class="default" />
     <link href="{{ site.baseurl }}/assets/css/Util.css" rel="stylesheet" media="all" class="default" />
     <link href="{{ site.baseurl }}/assets/css/vendor/Katex.css" rel="stylesheet" media="all" class="default" /><link href="{{ site.baseurl }}/assets/css/vendor/Katex.css" rel="stylesheet" media="all" class="default" />
-    <link href="{{ site.baseurl }}/assets/css/Custom.css" rel="stylesheet" media="all" class="default" />
+    <link href="{{ site.baseurl }}/assets/css/custom.css" rel="stylesheet" media="all" class="default" />
     {%- if page.format == "list" -%}
     <style>
         li {border-bottom: 1px solid var(--color-border-light); list-style: none; padding: 0.4rem 0 0.4rem 0;}
@@ -117,7 +117,9 @@
                         </div>
                         <!--- List type Note Layout-->
                         {%- include Content.html -%}
+                        {% comment %}
                         {%- include Backlinks.html -%}
+                        {% endcomment %}
                         {%- if page.type == "chall" -%}
                         <div class="footer-back">
                             <div>

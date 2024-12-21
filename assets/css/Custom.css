@@ -48,6 +48,11 @@ code.language-plaintext {
   margin-bottom: 0;
 }
 
+#copyright a {
+  background-image: none;
+  padding-right: 0;
+}
+
 p {
   text-align: justify;
 }

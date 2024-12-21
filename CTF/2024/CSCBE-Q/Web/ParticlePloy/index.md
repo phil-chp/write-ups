@@ -61,6 +61,8 @@ def custom_particle_js(uuid):
 
 Let's take a look at the template at `app/templates/particles.js`:
 
+{% raw %}
+
 ```js
 window.onload = function() {
     config = {{ particles_config }}
@@ -78,6 +80,8 @@ Then this template gets injected and ran in `app/tempaltes/view.html`:
     document.body.appendChild(script);
 </script>
 ```
+
+{% endraw %}
 
 But it appears to be "nonce-protected". Let's take a look at the CSP configurations and at sanitization.
 
