@@ -1,6 +1,8 @@
+---
+layout: Post
+permalink: /
+---
 # Write-Ups
-
-## Description
 
 This repository contains write-ups for various CTFs I have participated in or just simple challenges/machines I've completed on various platforms.
 
@@ -10,6 +12,6 @@ Unless otherwise stated, all flags present in every write-up will be hidden with
 
 ## Table of Contents
 
-- [HackTheBox](./HackTheBox/README.md)
-- [TryHackMe](./TryHackMe/README.md)
-- [CTFs](./CTF/README.md)
+- [HackTheBox](./HackTheBox/)
+- [TryHackMe](./TryHackMe/)
+- [CTFs](./CTF/)
