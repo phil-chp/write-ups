@@ -51,10 +51,11 @@ function modeSwitcher() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  let theme = localStorage.getItem('theme');
   if (!theme) {
     localStorage.setItem('theme', 'dark');
+    theme = "dark";
   }
-  let theme = localStorage.getItem('theme');
   if (theme) {
     applyTheme(theme);
   } else if (systemInitiatedDark.matches) {

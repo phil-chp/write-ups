@@ -33,8 +33,7 @@ content: WriteUps
 copyright:
   year: © 2024
   msg: Philippe Cheype
-  attr:
-timezone            : Europe/Paris
+timezone: Europe/Paris
 
 # Set title and content for private & broken link tooltop
 privatelinks:

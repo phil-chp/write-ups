@@ -1,6 +1,5 @@
 ---
 layout: Post
-type: chall
 ---
 # CTFs
 
