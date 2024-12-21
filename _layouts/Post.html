@@ -74,11 +74,13 @@
     <!--<link href="/assets/css/prism.css" rel="stylesheet" />-->
     <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
     <script>
-        let backURL = "";
+        let backURL = "../";
         document.addEventListener('DOMContentLoaded', function() {
             const backButton = document.querySelector('a.back-link');
-            backURL = backButton.href;
-            backButton.remove();
+            if (backButton) {
+                backURL = backButton.href;
+                backButton.remove();
+            }
         });
 
         function goBack() {
