@@ -11,6 +11,7 @@ CTFs write-ups I've done over the years.
 
 | Year | CTF | Ranking | Team? |
 | ---- | --- | ------: | ------- |
+| 2024 | [TRACS](./2024/TRACS/)                               | 10/107    | MyLittlePwnies (5) |
 | 2024 | [HeroCTF v6](./2024/HeroCTF_v6/)                     | 66/914    | MyLittlePwnies (4) |
 | 2024 | [404CTF](./2024/404CTF/)                             | ~300/3800 | |
 | 2024 | [Midnight Flag (Qualifiers)](./2024/MidnightFlag-Q/) | 19/88     | MyLittlePwnies (4) |
