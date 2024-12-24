@@ -67,6 +67,4 @@ Going onto crackstation.net and submitting our new MD5 we get a match: `infected
 
 From this we have the flag `Hero{infectedmushroom}`, and `infectedmushroom.exe` file to download for step 2.
 
-----
-
 I've renamed the file to `.exe.bin` to prevent any accidental execution. As just looking forwards a bit we understand it's a C2 malware file.

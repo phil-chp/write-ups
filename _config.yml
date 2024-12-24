@@ -28,7 +28,7 @@ baseurl: "/write-ups"
 destination         : ./_site
 
 # Website Header, Description, Footer year and text.
-heading: WriteUps
+heading: NedX | Write-Ups
 content: WriteUps
 copyright:
   year: © 2024

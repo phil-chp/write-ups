@@ -30,7 +30,7 @@
 <html lang="en">
 
 <head>
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="Philippe Cheype" property="og:site_name" />
     <meta
         content="Security Enthusiast and CTF Player. Writeups and other stuff."
@@ -122,16 +122,13 @@
                         {% comment %}
                         {%- include Backlinks.html -%}
                         {% endcomment %}
-                        {%- if page.type == "chall" -%}
-                        <div class="footer-back">
-                            <div>
-                                <a onclick="goBack()">
-                                    <h5 class="meta-title">← BACK</h5>
-                                </a>
-                            </div>
+                        <div class='footer-back'>
+                            <a onclick="goBack()">
+                                <h5 class="meta-title">← BACK</h5>
+                            </a>
                         </div>
                     </div>
-                    {%- endif -%}
+                </div>
             </div>
             {%- endif -%}
 

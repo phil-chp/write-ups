@@ -62,7 +62,7 @@ strings get_rich_fast_tail.png | sort | uniq -c
 #    1 IEND
 ```
 
-After looking online for references to this sort of event, we found [aCropalypse](https://www.wikiwand.com/en/ACropalypse) which was a CVE regarding Cropping/Snipping tools developped by Microsoft (Win10/11) and Google (Pixel phones), in particular, we are interested in the Windows Snipping Tool. This is mentioned in the strings (we did not see this at first, but while exploring [tweakpng](https://entropymine.com/jason/tweakpng/) we saw a comment on the last valid IDAT chunk which mentioned the snipping tool, we can find this comment in the strings):
+After looking online for references to this sort of event, we found [CVE-2023-21036 aCropalypse](https://en.wikipedia.org/wiki/ACropalypse) which was a CVE regarding Cropping/Snipping tools developped by Microsoft (Win10/11) and Google (Pixel phones), in particular, we are interested in the Windows Snipping Tool. This is mentioned in the strings (we did not see this at first, but while exploring [tweakpng](https://entropymine.com/jason/tweakpng/) we saw a comment on the last valid IDAT chunk which mentioned the snipping tool, we can find this comment in the strings):
 
 ```bash
 strings get_rich_fast.png | grep "Snip"

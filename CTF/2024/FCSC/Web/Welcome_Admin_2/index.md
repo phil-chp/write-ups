@@ -83,5 +83,3 @@ cursor.execute(f"SELECT  check_password('{password}')")
 Still the same general idea but a little bit more intricate, now we have two choices, either we try to exploit the `check_password` function or we try to bypass it.
 
 Let's first try to bypass it, this will allow us to stay in the SQLi mindset.
-
-<!-- ') || '1'='1 -->

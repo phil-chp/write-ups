@@ -2,6 +2,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  -webkit-text-size-adjust: 100%; /* On mobile the --text-* variables were computed incorrectly*/
 }
 
 body {
@@ -46,6 +47,7 @@ code.language-plaintext {
   padding-top: 2rem;
   padding-bottom: 1rem;
   margin-bottom: 0;
+  margin-top: 2rem;
 }
 
 #copyright a {
@@ -63,4 +65,47 @@ img {
 
 .back-link {
   display: none;
+}
+
+table {
+  display: block;
+  overflow-x: auto;
+}
+
+tbody * > * {
+  white-space: nowrap;
+}
+
+pre > code > span,
+code > span,
+pre > span {
+  font-size: var(--size-s);
+
+}
+
+p > code,
+p > a {
+  display: inline-block;
+  /* white-space: pre-wrap; */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  text-align: left !important;
+}
+
+@media screen and (max-width: 768px) {
+  blockquote {
+    padding: 0;
+    margin-right: calc(2rem + 5px);
+    padding-left: 1rem;
+    margin-left: 1rem;
+  }
+}
+
+
+@media screen and (min-width: 769px) {
+  blockquote {
+    /* padding-left: 2rem; */
+    margin-left: 1.5rem !important;
+  }
 }

@@ -1,6 +1,6 @@
---- 
-layout: Stylesheet 
---- 
+---
+layout: Stylesheet
+---
 @import "fruity.css";
 
 
@@ -116,21 +116,21 @@ h5 {
 }
 
 h6 {
-    font-size: var(--text-m);
+    font-size: var(--text-s);
     line-height: var(--text-leading-normal);
     font-weight: var(--text-weight-bold);
     padding: var(--padding-thin) 0;
 }
 
 p {
-    font-size: var(--text-m);
+    font-size: var(--text-s);
     line-height: var(--text-leading-normal);
     font-weight: var(--text-weight-normal);
     margin: 0 0 1em 0;
 }
 
 code {
-    font-size: var(--text-m);
+    font-size: var(--text-s);
     font-weight: var(--text-leading-normal);
     padding: 0.25em 0.5em 0.25em;
 }
@@ -391,7 +391,7 @@ pre code {
     word-wrap: break-word !important;
     padding: 15px 15px 15px 15px;
     vertical-align: middle;
-    font-size: 1em;
+    font-size: var(--text-s);
 
 }
 
@@ -1593,6 +1593,3 @@ a[href^="http"] {
         padding-top: 2rem;
     }
 }
-
-
-

@@ -4,14 +4,14 @@ permalink: /
 ---
 # Write-Ups
 
-This repository contains write-ups for various CTFs I have participated in or just simple challenges/machines I've completed on various platforms.
+This repository contains write-ups for various CTFs, challenges, and machines I've done.
 
-My objective is not collect them all, but to keep track of very intersting/challenging machines from which I wan't to keep a trace of.
+My objective is not collect them all, but to keep track of very intersting/challenging machines where I learned something interesting. This is more of an archive for me than a blog, but I might make blog posts at some point if I feel like it.
 
-Unless otherwise stated, all flags present in every write-up will be hidden with the following attribute: `<redactedX>`, where X is the flag number in case there are multiple. This is to incite people to try the challenges themselves and not just copy-paste the flags.
+I'll try my best to obfuscate flags, you should try the challenges and not just copy-paste the flags.
 
 ## Table of Contents
 
+- [CTFs](./CTF/)
 - [HackTheBox](./HackTheBox/)
 - [TryHackMe](./TryHackMe/)
-- [CTFs](./CTF/)

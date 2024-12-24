@@ -98,11 +98,15 @@ We can note that, the `/admin` path gets called every 30s, the user contains the
 
 Let's try to find a way to inject something into the admin page. By looking at it's template we learn that all the messages submitted get listed and displayed on the page:
 
+{% raw %}
+
 ```html
 {% for message in messages %}
     <div>{{ message.content | safe }}</div>
 {% endfor %}
 ```
+
+{% endraw %}
 
 ## Building the payload
 

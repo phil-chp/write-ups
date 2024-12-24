@@ -4,7 +4,7 @@ type: chall
 ---
 # Pinned 🟡
 
-<a class="back-link" href="../../">< Go back</a>
+<a class="back-link" href="../../../">< Go back</a>
 
 ## Description
 

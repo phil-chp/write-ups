@@ -4,7 +4,7 @@ type: chall
 ---
 # FastJson and Furious 🟡
 
-<a class="back-link" href="../../">< Go back</a>
+<a class="back-link" href="../../../">< Go back</a>
 
 ## Description
 

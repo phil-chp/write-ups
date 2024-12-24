@@ -29,7 +29,6 @@ layout: Post
 ## Crypto
 
 - ✅ [Bébé nageur ⚪](./Crypto/Bebe_nageur/)
-- ⏯️ [Le petit bain 🟡](./Crypto/Le_petit_bain/)
 
 ## Binary
 
@@ -56,7 +55,6 @@ layout: Post
 
 - ✅ [L'absence ⚪](./Steganography/Labsence/)
 - ✅ [Regarder en stéréo 🟡](./Steganography/Regarder_en_stereo/)
-- ⏯️ [La Barre Fixe 🟡](./Steganography/La_barre_fixe/)
 
 ## Reverse
 
@@ -68,7 +66,3 @@ layout: Post
 
 - ✅ [Légende ⚪](./OSINT/Legende/)
 - ✅ [Not on my watch 🟡](./OSINT/Not_on_my_watch/)
-
-## Quantum
-
-- ⏯️ [Des trains superposés ⚪](./Quantum/Des_trains_superposes/)
