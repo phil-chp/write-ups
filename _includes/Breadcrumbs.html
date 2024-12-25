@@ -1,7 +1,7 @@
 {% if page.url %}
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{{ site.baseurl }}/challs/">Home</a></li>
+      <li class="breadcrumb-item"><a href="{{ site.baseurl }}/challs">Home</a></li>
 
       {% assign breadcrumb_trail = page.url | remove: 'index.html' | remove_first: '/challs/' | split: '/' %}
       {% assign url_accumulator = site.baseurl | append: '/challs' %}

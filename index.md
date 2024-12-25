@@ -10,7 +10,7 @@ My objective is not collect them all, but to keep track of very intersting/chall
 
 I'll try my best to obfuscate flags, you should try the challenges and not just copy-paste the flags.
 
-<h2><a href="{{site.baseurl}}/challs/">View all Write-Ups</a></h2>
+<h2><a href="{{site.baseurl}}/challs">View all Write-Ups</a></h2>
 
 ## By Category
 
