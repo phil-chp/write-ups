@@ -2,7 +2,7 @@
 layout: Post
 permalink: /
 ---
-# Write-Ups
+# Home
 
 This repository contains write-ups for various CTFs, challenges, and machines I've done.
 
@@ -10,8 +10,10 @@ My objective is not collect them all, but to keep track of very intersting/chall
 
 I'll try my best to obfuscate flags, you should try the challenges and not just copy-paste the flags.
 
-## Table of Contents
+<h2><a href="{{site.baseurl}}/challs/">View all Write-Ups</a></h2>
 
-- [CTFs](./CTF/)
-- [HackTheBox](./HackTheBox/)
-- [TryHackMe](./TryHackMe/)
+## By Category
+
+- [CTFs](./challs/CTF/)
+- [HackTheBox](./challs/HackTheBox/)
+- [TryHackMe](./challs/TryHackMe/)

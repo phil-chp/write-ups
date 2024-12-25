@@ -1,0 +1,21 @@
+{% if page.url %}
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{{ site.baseurl }}/challs/">Home</a></li>
+
+      {% assign breadcrumb_trail = page.url | remove: 'index.html' | remove_first: '/challs/' | split: '/' %}
+      {% assign url_accumulator = site.baseurl | append: '/challs' %}
+
+      {% for part in breadcrumb_trail %}
+        {% unless forloop.last %}
+          {% assign url_accumulator = url_accumulator | append: '/' | append: part %}
+          <li class="breadcrumb-item">
+            <a href="{{ url_accumulator }}/">{{ part | replace: '_', ' ' | replace: '-', ' ' }}</a>
+          </li>
+        {% endunless %}
+      {% endfor %}
+
+      <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+    </ol>
+  </nav>
+{% endif %}

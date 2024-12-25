@@ -50,7 +50,7 @@
     <meta content="{{ site.url }}{{ page.url }}" property="og:url">
     {%- endif -%}
 
-    <title>{{page.title}} - {{site.heading}}</title>
+    <title>{%- if page.permalink == nil -%}{{page.title}}&nbsp;-&nbsp;{%- endif -%}{{site.heading}}</title>
     <!-- <script data-host="https://microanalytics.io" data-dnt="false" src="https://microanalytics.io/js/script.js" id="ZwSg9rf6GA" async defer></script> -->
     <link rel="canonical" href="{{site.url}}{{page.url}}" />
     <link rel="apple-touch-icon" href="{{ site.baseurl }}/assets/img/profile.png">
@@ -80,6 +80,8 @@
             if (backButton) {
                 backURL = backButton.href;
                 backButton.remove();
+            } else {
+                backURL = '{{ site.baseurl }}/';
             }
         });
 
@@ -96,7 +98,7 @@
 
             <!-- Homepage Layout-->
             {%- if page.permalink == "/" -%}
-            <div class="column is-6-widescreen  is-6-desktop is-8-tablet is-12-mobile">
+            <div class="column is-6-widescreen is-6-desktop is-8-tablet is-12-mobile">
                     {%- if site.preferences.homepage.enabled -%}
                             <!--- Show Homepage -->
                             {%- include Homepage.html -%}
@@ -107,26 +109,95 @@
                             {%- include Feed.html -%}
                     {%- endif -%}
             </div>
-            {%- else -%}
+            {%- endif -%}
 
-            <!--- Post Layout-->
+
+            <!--- Posts Layout-->
+            {%- if page.permalink == "/challs" -%}
+            <div class="column is-6-widescreen is-8-desktop is-8-tablet is-12-mobile">
+                <a onclick="goBack()">
+                    <h5 class="meta-title">← BACK</h5>
+                </a>
+                {%- include Content.html -%}
+                {% assign sorted_challs = site.challs | where: "format", "chall" | sort: "date" | reverse %}
+                <div class="my-challenges">
+                    {% for chall in sorted_challs %}
+                        {% if chall.format == 'chall' %}
+                            <div class="list-feed">
+                                <a href="{{ site.baseurl }}{{ chall.url }}" style="text-decoration: none;display: flex;justify-content: space-between;flex-direction: row;width: 100%;">
+                                    <div class="my-row">
+                                        <div class="my-title writinglist-title">
+                                            {% if chall.ctf != nil %}<div class="my-ctf">{{ chall.ctf }}&nbsp;|&nbsp;</div>{% endif %}<!--
+                                        --><b>{{ chall.title }}</b>
+                                        </div>
+                                        <div class="my-category">{{ chall.category | join: ', ' }}</div>
+                                        <div class="my-platform writinglist-title">{% if chall.ctf != nil %}CTF{% else %}{{ chall.platform}}{% endif %}</div>
+                                        <div class="my-date">{{ chall.date | date: "%b %d, %Y" }}</div>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class='footer-back'>
+                    <a onclick="goBack()">
+                        <h5 class="meta-title">← BACK</h5>
+                    </a>
+                </div>
+            </div>
+
+            {%- endif -%}
+
+            {%- if page.permalink == "/tags" -%}
+            <div class="column is-6-widescreen is-8-desktop is-8-tablet is-12-mobile">
+                <a onclick="goBack()">
+                    <h5 class="meta-title">← BACK</h5>
+                </a>
+                {%- include Content.html -%}
+                {% assign sorted_tags = site.tags | sort %}
+                <div class="my-challenges">
+                    {% for tag in sorted_tags %}
+                        <div class="list-feed">
+                            <a href="{{ site.baseurl }}/tags/{{ tag[0] | append: '' | slugify }}" style="text-decoration: none;display: flex;justify-content: space-between;flex-direction: row;width: 100%;">
+                                <div class="my-row">
+                                    <div class="my-title writinglist-title">
+                                        <b>{{ tag[0] }}</b>
+                                    </div>
+                                    <div class="my-category">{{ tag[1] | size }} Posts</div>
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class='footer-back'>
+                    <a onclick="goBack()">
+                        <h5 class="meta-title
+                        ">← BACK</h5>
+                    </a>
+                </div>
+            </div>
+            {%- endif -%}
+
+            <!--- Notes Feed Layout-->
+            {%- if page.format == "nav" or page.format == "ctf" or page.format == "chall" -%}
             <div class="column is-6-widescreen  is-6-desktop is-8-tablet is-12-mobile">
-                    <div class="note-page-section">
-                        <div>
-                            <a onclick="goBack()">
-                                <h5 class="meta-title">← BACK</h5>
-                            </a>
-                        </div>
-                        <!--- List type Note Layout-->
-                        {%- include Content.html -%}
-                        {% comment %}
-                        {%- include Backlinks.html -%}
-                        {% endcomment %}
-                        <div class='footer-back'>
-                            <a onclick="goBack()">
-                                <h5 class="meta-title">← BACK</h5>
-                            </a>
-                        </div>
+                <div class="note-page-section">
+                    <div>
+                        <a onclick="goBack()">
+                            <h5 class="meta-title">← BACK</h5>
+                        </a>
+                    </div>
+                    <!--- List type Note Layout-->
+                    {%- include Breadcrumbs.html -%}
+                    {%- include Tags.html -%}
+                    {%- include Content.html -%}
+                    {% comment %}
+                    {%- include Backlinks.html -%}
+                    {% endcomment %}
+                    <div class='footer-back'>
+                        <a onclick="goBack()">
+                            <h5 class="meta-title">← BACK</h5>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -134,29 +205,11 @@
 
             <!--- Notes Feed Layout-->
             {%- if page.feedformat -%}
-            <div class="column is-6-widescreen  is-8-desktop is-8-tablet is-12-mobile">
+            <div class="column is-6-widescreen is-8-desktop is-8-tablet is-12-mobile">
                 <h5 class="meta-title"><a href="/">← Home</a></h5>
-                    {%- include Content.html -%}
-                    {%- include Feed.html -%}
-            {%- endif -%}
-
-
-            <!--- Post Feed Layout-->
-            {%- if page.permalink == "/posts" -%}
-            <div class="column is-6-widescreen  is-8-desktop is-8-tablet is-12-mobile">
-                <h5 class="meta-title"><a href="/">← Home</a></h5>
-                    {%- include Content.html -%}
-                    {% for post in site.posts %}
-                        <div class="list-feed">
-                        <a href="{{ site.baseurl }}{{post.url}}" style="text-decoration: none;display: flex;justify-content: space-between;flex-direction: row;width: 100%;">
-                            <div class="writinglist-title">{{post.title }}</div>
-                        </a>
-                        </div>
-                    {%- endfor -%}
+                {%- include Content.html -%}
+                {%- include Feed.html -%}
             </div>
-
-            <ul>
-
             {%- endif -%}
         </div>
     </section>

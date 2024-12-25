@@ -25,7 +25,7 @@ url: "https://phil-chp.github.io" # the base hostname & protocol for your site, 
 # Else keep it Empty (DON'T PUT /; Keep it empty)
 baseurl: "/write-ups"
 
-destination         : ./_site
+destination: ./_site
 
 # Website Header, Description, Footer year and text.
 heading: NedX | Write-Ups
@@ -38,7 +38,7 @@ timezone: Europe/Paris
 # Set title and content for private & broken link tooltop
 privatelinks:
   title: Private or Broken Links
-  msg: The page you're looking for is either not available or private!
+  msg: The page you're looking for is not available!
 
 # Theme level preferences
 preferences:
@@ -61,13 +61,14 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-tidy
+  - jekyll-archives
 
 ## Enable Collections
 ## Suggested collects are "notes" "lists" and "blog"
 collections:
-    notes:
-      output: true
-      permalink: /note/:title
+  challs:
+    output: true
+    include: ['**/index.md']
 
 markdown: kramdown
 
@@ -81,20 +82,26 @@ kramdown:
 sass:
   style: compressed
 
-defaults:
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: Post
-      permalink: /post/:title
-      content-type: post
-  - scope:
-      path: ""
-      type: notes
-    values:
-      layout: Post
-      content-type: notes
+jekyll-archives:
+  enabled: ['tags']
+  layout: 'tagpage'
+  permalinks:
+    tag: '/tags/:name/'
+
+# defaults:
+#   - scope:
+#       path: "/write-ups"
+#       type: posts
+#     values:
+#       layout: Post
+#       permalink: /post/:title
+#       content-type: post
+  # - scope:
+  #     path: ""
+  #     type: notes
+  #   values:
+  #     layout: Post
+  #     content-type: notes
 
 
 # Exclude from processing.
@@ -106,9 +113,14 @@ defaults:
 # their entries' file path in the `include:` list.
 #
 exclude:
-  - _notes/000 Inbox
-  - _notes/200 Private
-  - _notes/300 Templates
+  - Tools/
+  - bin/
+  - docker-compose.yml
+  - docker-entrypoint.sh
+  - Dockerfile
+  - dockerignore.txt
+#   - _notes/200 Private
+#   - _notes/300 Templates
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/

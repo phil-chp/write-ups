@@ -10,6 +10,7 @@ html[data-theme="light"] {
     --color-bg-sub: #FAFAFC;
     --color-text-main: #282832;
     --color-text-sub: #5D5D67;
+    --color-text-hint: #acacac;
     --color-text-link: #2380ED;
     --color-border-dark: #363636;
     --color-border: #BABCBD;
@@ -21,6 +22,7 @@ html[data-theme="dark"] {
     --color-bg-sub: #18181C;
     --color-text-main: #FAFAFC;
     --color-text-sub: #FFFEFF;
+    --color-text-hint: #5D5D67;
     --color-text-link: #6D9EFF;
     --color-border-dark: #E6E6E6;
     --color-border: #696969;
@@ -54,6 +56,7 @@ html[data-theme="dark"] {
 }
 
 :root {
+    --text-xxs: clamp(0.60rem, calc(0.60rem + -0.06vw), 0.60rem);
     --text-xs: clamp(0.70rem, calc(0.79rem + -0.06vw), 0.78rem);
     --text-s: clamp(0.94rem, calc(0.94rem + 0.00vw), 0.94rem);
     --text-m: clamp(1.13rem, calc(1.11rem + 0.09vw), 1.25rem);

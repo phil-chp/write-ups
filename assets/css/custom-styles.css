@@ -83,8 +83,12 @@ pre > span {
 
 }
 
+p > p,
 p > code,
-p > a {
+p > a,
+blockquote > p,
+blockquote > a,
+blockquote > code {
   display: inline-block;
   /* white-space: pre-wrap; */
   word-wrap: break-word;
@@ -93,6 +97,144 @@ p > a {
   text-align: left !important;
 }
 
+.navbar-brand {
+  z-index: 10000;
+}
+
+.navbar-menu {
+  position: absolute;
+  width: 100%;
+  background-color:  var(--color-bg-main);
+  border-bottom: solid 1px var(--color-border);
+  z-index: 1000;
+}
+
+.navbar-brand .buttons:last-child {
+  margin-bottom: 0;
+}
+
+.note-page-section {
+  padding-top: 1rem;
+}
+
+/* /challs/ page styles */
+.my-challenges {
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+}
+
+.my-row {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-grow: 1;
+}
+
+.my-row .my-title {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.my-row .my-category {
+  flex-grow: 1;
+  flex-shrink: 0;
+  font-size: var(--text-xs);
+  color: var(--color-text-hint);
+  text-align: right;
+  white-space: nowrap;
+  font-style: italic;
+}
+
+.my-row .my-date {
+  max-width: 6rem;
+  white-space: nowrap;
+  text-align: left;
+}
+
+
+
+/* Breadcrumb styles */
+.breadcrumb {
+  display: flex;
+  overflow-x: auto;
+  list-style: none;
+  padding: 8px 8px var(--padding-normal);
+  margin-top: 0.5rem;
+  margin-block-end: 0;
+}
+
+.breadcrumb-item {
+  font-size: var(--text-s);
+  color: var(--color-text-sub);
+  padding-right: 8px;
+  display: block;
+  white-space: nowrap;
+  padding-bottom: 0;
+}
+
+.breadcrumb-item a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.breadcrumb-item::after {
+  content: '/';
+  padding-left: 8px;
+  color: var(--color-text-hint);
+}
+
+.breadcrumb-item:last-child::after {
+  content: none;
+}
+
+.breadcrumb-item:last-child {
+  color: var(--color-text-main);
+  font-weight: var(--text-weight-bold);
+  padding-right: 0;
+}
+
+.breadcrumb::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+
+/* Tags styles */
+.tags {
+  padding-bottom: var(--padding-broad)
+}
+
+.tag a {
+  color: var(--color-text-main);
+}
+
+.tag.primary-tag a {
+  font-weight: bolder;
+
+}
+.tag.category a {
+  font-weight: bolder;
+}
+
+
+/* Tablet */
+@media screen and (min-width: 769px) {
+  blockquote {
+    /* padding-left: 2rem; */
+    margin-left: 1.5rem !important;
+  }
+
+  /* Breadcrumb styles */
+  .breadcrumb {
+    margin-bottom: 0;
+  }
+}
+
+/* Mobile */
 @media screen and (max-width: 768px) {
   blockquote {
     padding: 0;
@@ -100,12 +242,23 @@ p > a {
     padding-left: 1rem;
     margin-left: 1rem;
   }
-}
 
 
-@media screen and (min-width: 769px) {
-  blockquote {
-    /* padding-left: 2rem; */
-    margin-left: 1.5rem !important;
+  /* /challs/ page styles */
+  .my-row .my-category,
+  .my-row .my-ctf {
+    display:none;
   }
+
+  .my-row .my-title {
+    flex-grow: 1;
+    flex-shrink: 0;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 125px;
+  }
+
+
 }

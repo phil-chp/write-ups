@@ -1,0 +1,13 @@
+# no version needed since 2020
+
+services:
+  jekyll:
+    build: .
+    volumes:
+      - .:/site
+      - jekyll-gems:/usr/local/bundle
+    ports:
+      - '4000:4000'
+
+volumes:
+  jekyll-gems:

@@ -34,7 +34,7 @@
       <a class="navbar-item" href="{{ site.baseurl }}/index.html">
           <h6> {{site.heading}}</h6></a>
           <script src="{{ site.baseurl }}/assets/js/modeswitcher.js"></script>
-          <!-- <script src="{{ site.baseurl }}/assets/js/Hamburger.js"></script> -->
+          <script src="{{ site.baseurl }}/assets/js/Hamburger.js"></script>
       <div class="navbar-item navbar-dark-mode__mobile is-hidden-tablet" onclick="modeSwitcher()">
         <div class="buttons">
           <a class="button is-text">
@@ -44,18 +44,15 @@
           </a>
         </div>
       </div>
-      <!-- <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a> -->
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarItems">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </a>
     </div>
 
-    <div id="navbarBasicExample" class="navbar-menu">
+    <div id="navbarItems" class="navbar-menu">
       <div class="navbar-start">
-        <!-- <a href="../post/how-to" class="navbar-item">
-          How To
-        </a> -->
+        <a href="{{site.baseurl}}/" class="navbar-item">Home</a>
+        <a href="{{site.baseurl}}/challs" class="navbar-item">Write Ups</a>
       </div>
       <div class="navbar-end is-hidden-mobile" onclick="modeSwitcher()" >
         <div class="navbar-item">

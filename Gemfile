@@ -27,5 +27,6 @@ end
 
 gem 'jekyll-sitemap'
 gem 'kramdown-math-katex'
+gem 'jekyll-archives'
 
 # gem "webrick", "~> 1.7"
