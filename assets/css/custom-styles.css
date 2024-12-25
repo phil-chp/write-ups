@@ -33,8 +33,10 @@ code.language-plaintext {
   padding: 0 2px;
 }
 
-.highlight pre {
+.highlight pre, pre {
   border-radius: 4px;
+  background-color: var(--color-border-light);
+  padding: 0;
 }
 
 .footer-back {
@@ -55,12 +57,13 @@ code.language-plaintext {
   padding-right: 0;
 }
 
-p {
+/* p {
   text-align: justify;
-}
+} */
 
 img {
-  width: 100%;
+  max-height: 80vh;
+  width: auto;
 }
 
 .back-link {
@@ -80,7 +83,6 @@ pre > code > span,
 code > span,
 pre > span {
   font-size: var(--size-s);
-
 }
 
 p > p,

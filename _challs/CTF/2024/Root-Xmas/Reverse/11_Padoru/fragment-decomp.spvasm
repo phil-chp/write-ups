@@ -1,0 +1,158 @@
+; SPIR-V
+; Version: 1.0
+; Generator: Google Shaderc over Glslang; 11
+; Bound: 95
+; Schema: 0
+               OpCapability Shader
+          %1 = OpExtInstImport "GLSL.std.450"
+               OpMemoryModel Logical GLSL450
+               OpEntryPoint Fragment %main "main" %finalChristmasKey %UV %color
+               OpExecutionMode %main OriginLowerLeft
+               OpSource GLSL 460
+               OpSourceExtension "GL_GOOGLE_cpp_style_line_directive"
+               OpSourceExtension "GL_GOOGLE_include_directive"
+               OpName %main "main"
+               OpName %flagDetected "flagDetected"
+               OpName %i "i"
+               OpName %decChristmasLetter "decChristmasLetter"
+               OpName %TrueSecrets "TrueSecrets"
+               OpMemberName %TrueSecrets 0 "encTrueChristmasSecret"
+               OpName %_ ""
+               OpName %finalChristmasKey "finalChristmasKey"
+               OpName %GuessedSecrets "GuessedSecrets"
+               OpMemberName %GuessedSecrets 0 "guessedSecret"
+               OpName %__0 ""
+               OpName %textureColor "textureColor"
+               OpName %sampler "sampler"
+               OpName %UV "UV"
+               OpName %color "color"
+               OpDecorate %_arr_int_uint_67 ArrayStride 16
+               OpDecorate %TrueSecrets Block
+               OpMemberDecorate %TrueSecrets 0 Offset 0
+               OpDecorate %_ Binding 4
+               OpDecorate %_ DescriptorSet 0
+               OpDecorate %finalChristmasKey Flat
+               OpDecorate %finalChristmasKey Location 4
+               OpDecorate %_arr_int_uint_67_0 ArrayStride 16
+               OpDecorate %GuessedSecrets Block
+               OpMemberDecorate %GuessedSecrets 0 Offset 0
+               OpDecorate %__0 Binding 1
+               OpDecorate %__0 DescriptorSet 0
+               OpDecorate %sampler Binding 2
+               OpDecorate %sampler DescriptorSet 0
+               OpDecorate %UV Location 3
+               OpDecorate %color Location 0
+       %void = OpTypeVoid
+          %3 = OpTypeFunction %void
+       %bool = OpTypeBool
+%_ptr_Function_bool = OpTypePointer Function %bool
+       %true = OpConstantTrue %bool
+        %int = OpTypeInt 32 1
+%_ptr_Function_int = OpTypePointer Function %int
+      %int_0 = OpConstant %int 0
+     %int_67 = OpConstant %int 67
+       %uint = OpTypeInt 32 0
+    %uint_67 = OpConstant %uint 67
+%_arr_int_uint_67 = OpTypeArray %int %uint_67
+%TrueSecrets = OpTypeStruct %_arr_int_uint_67
+%_ptr_Uniform_TrueSecrets = OpTypePointer Uniform %TrueSecrets
+          %_ = OpVariable %_ptr_Uniform_TrueSecrets Uniform
+%_ptr_Uniform_int = OpTypePointer Uniform %int
+%_ptr_Input_int = OpTypePointer Input %int
+%finalChristmasKey = OpVariable %_ptr_Input_int Input
+     %int_25 = OpConstant %int 25
+%_arr_int_uint_67_0 = OpTypeArray %int %uint_67
+%GuessedSecrets = OpTypeStruct %_arr_int_uint_67_0
+%_ptr_Uniform_GuessedSecrets = OpTypePointer Uniform %GuessedSecrets
+        %__0 = OpVariable %_ptr_Uniform_GuessedSecrets Uniform
+      %false = OpConstantFalse %bool
+      %int_1 = OpConstant %int 1
+      %float = OpTypeFloat 32
+    %v4float = OpTypeVector %float 4
+%_ptr_Function_v4float = OpTypePointer Function %v4float
+         %61 = OpTypeImage %float 2D 0 0 0 1 Unknown
+         %62 = OpTypeSampledImage %61
+%_ptr_UniformConstant_62 = OpTypePointer UniformConstant %62
+    %sampler = OpVariable %_ptr_UniformConstant_62 UniformConstant
+    %v2float = OpTypeVector %float 2
+%_ptr_Input_v2float = OpTypePointer Input %v2float
+         %UV = OpVariable %_ptr_Input_v2float Input
+    %float_1 = OpConstant %float 1
+     %uint_0 = OpConstant %uint 0
+%_ptr_Function_float = OpTypePointer Function %float
+     %uint_1 = OpConstant %uint 1
+     %uint_2 = OpConstant %uint 2
+     %uint_3 = OpConstant %uint 3
+%_ptr_Output_v4float = OpTypePointer Output %v4float
+      %color = OpVariable %_ptr_Output_v4float Output
+       %main = OpFunction %void None %3
+          %5 = OpLabel
+%flagDetected = OpVariable %_ptr_Function_bool Function
+          %i = OpVariable %_ptr_Function_int Function
+%decChristmasLetter = OpVariable %_ptr_Function_int Function
+%textureColor = OpVariable %_ptr_Function_v4float Function
+               OpStore %flagDetected %true
+               OpStore %i %int_0
+               OpBranch %14
+         %14 = OpLabel
+               OpLoopMerge %16 %17 None
+               OpBranch %18
+         %18 = OpLabel
+         %19 = OpLoad %int %i
+         %21 = OpSLessThan %bool %19 %int_67
+               OpBranchConditional %21 %15 %16
+         %15 = OpLabel
+         %29 = OpLoad %int %i
+         %31 = OpAccessChain %_ptr_Uniform_int %_ %int_0 %29
+         %32 = OpLoad %int %31
+         %33 = OpLoad %int %i
+         %36 = OpLoad %int %finalChristmasKey
+         %37 = OpIAdd %int %33 %36
+         %39 = OpSMod %int %37 %int_25
+         %40 = OpBitwiseXor %int %32 %39
+               OpStore %decChristmasLetter %40
+         %41 = OpLoad %int %decChristmasLetter
+         %46 = OpLoad %int %i
+         %47 = OpAccessChain %_ptr_Uniform_int %__0 %int_0 %46
+         %48 = OpLoad %int %47
+         %49 = OpINotEqual %bool %41 %48
+               OpSelectionMerge %51 None
+               OpBranchConditional %49 %50 %51
+         %50 = OpLabel
+               OpStore %flagDetected %false
+               OpBranch %16
+         %51 = OpLabel
+               OpBranch %17
+         %17 = OpLabel
+         %54 = OpLoad %int %i
+         %56 = OpIAdd %int %54 %int_1
+               OpStore %i %56
+               OpBranch %14
+         %16 = OpLabel
+         %65 = OpLoad %62 %sampler
+         %69 = OpLoad %v2float %UV
+         %70 = OpImageSampleImplicitLod %v4float %65 %69
+               OpStore %textureColor %70
+         %71 = OpLoad %bool %flagDetected
+               OpSelectionMerge %73 None
+               OpBranchConditional %71 %72 %73
+         %72 = OpLabel
+         %77 = OpAccessChain %_ptr_Function_float %textureColor %uint_0
+         %78 = OpLoad %float %77
+         %79 = OpFSub %float %float_1 %78
+         %81 = OpAccessChain %_ptr_Function_float %textureColor %uint_1
+         %82 = OpLoad %float %81
+         %83 = OpFSub %float %float_1 %82
+         %85 = OpAccessChain %_ptr_Function_float %textureColor %uint_2
+         %86 = OpLoad %float %85
+         %87 = OpFSub %float %float_1 %86
+         %89 = OpAccessChain %_ptr_Function_float %textureColor %uint_3
+         %90 = OpLoad %float %89
+         %91 = OpCompositeConstruct %v4float %79 %83 %87 %90
+               OpStore %textureColor %91
+               OpBranch %73
+         %73 = OpLabel
+         %94 = OpLoad %v4float %textureColor
+               OpStore %color %94
+               OpReturn
+               OpFunctionEnd

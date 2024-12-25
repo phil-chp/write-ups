@@ -1,0 +1,11 @@
+services:
+  gift-control-interface:
+    container_name: gift-control-interface
+    build: 
+      context: ../
+      dockerfile: docker/Dockerfile
+    ports:
+      - "1337:1337" # EXTERNAL_PORT:INTERNAL_PORT
+    restart: always # Always restart the container if it stops
+    environment:
+      - LD_LIBRARY_PATH=/usr/local/lib

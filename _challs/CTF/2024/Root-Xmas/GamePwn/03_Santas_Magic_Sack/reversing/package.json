@@ -1,0 +1,12 @@
+{
+  "name": "reversing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "crypto-js": "^4.2.0"
+  }
+}

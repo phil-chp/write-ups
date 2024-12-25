@@ -1,0 +1,10 @@
+services:
+  chall:
+    build: .
+    ports:
+      - 3000:3000
+    read_only: true
+    volumes:
+      - ./flag.txt:/flag/randomflagdockersayspouet.txt
+      - /tmp
+    restart: unless-stopped

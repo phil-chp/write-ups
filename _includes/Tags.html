@@ -8,10 +8,12 @@
           <li class="tag primary-tag">
             <a href="{{ site.baseurl }}/tags/{{ page.ctf | append: '' | slugify }}/">{{ page.ctf }}</a>
           </li>
-      {%- else if page.platform != nil -%}
+      {%- else -%}
+        {%- if page.platform != nil -%}
           <li class="tag primary-tag">
             <a href="{{ site.baseurl }}/tags/{{ page.platform | append: '' | slugify }}/">{{ page.platform }}</a>
           </li>
+        {%- endif -%}
       {%- endif -%}
 
       {% for categ in page.category %}
