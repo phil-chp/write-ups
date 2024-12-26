@@ -63,6 +63,7 @@ plugins:
   - jekyll-tidy
   - jekyll-archives
 
+
 ## Enable Collections
 ## Suggested collects are "notes" "lists" and "blog"
 collections:
@@ -84,9 +85,9 @@ sass:
 
 jekyll-archives:
   enabled: ['tags']
-  layout: 'tagpage'
+  layout: 'Tags'
   permalinks:
-    tag: '/tags/:name/'
+    tag: '/tags/:tag/'
 
 # defaults:
 #   - scope:

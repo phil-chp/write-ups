@@ -4,7 +4,7 @@ format: chall
 title: Darts Bank
 date: 2024-04-20
 ctf: 404CTF
-tags: [PCAP, PowerShell, Obfuscation, Malware]
+tags: [Wireshark, PowerShell, Obfuscation, Malware]
 category: [Forensics]
 ---
 # Darts Bank 🟠

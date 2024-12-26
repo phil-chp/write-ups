@@ -4,7 +4,7 @@ format: chall
 title: Advent of Cyber 2023 - Side Quest 1
 date: 2023-12-20
 platform: TryHackMe
-tags: [EAPOL, 802.11, PCAP, Aircrack-ng, SSL, TLS, RDP, pyrdp]
+tags: [EAPOL, 802.11, Wireshark, Aircrack-ng, SSL, TLS, RDP, pyrdp]
 category: [Forensics, Network]
 ---
 # Advent of Cyber 2023 - Side Quest 1

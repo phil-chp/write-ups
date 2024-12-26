@@ -4,7 +4,7 @@ format: chall
 title: Mack'os
 date: 2024-04-27
 ctf: MidnightFlag Qualifiers
-tags: [volatility, PCAP]
+tags: [volatility, Wireshark]
 category: [Forensics]
 ---
 # Mack'os

@@ -149,31 +149,35 @@
 
             {%- endif -%}
 
-            {%- if page.permalink == "/tags" -%}
+            {%- if page.permalink == "/tags-disabled" -%}
             <div class="column is-6-widescreen is-8-desktop is-8-tablet is-12-mobile">
                 <a onclick="goBack()">
                     <h5 class="meta-title">← BACK</h5>
                 </a>
                 {%- include Content.html -%}
-                {% assign sorted_tags = site.tags | sort %}
-                <div class="my-challenges">
-                    {% for tag in sorted_tags %}
-                        <div class="list-feed">
-                            <a href="{{ site.baseurl }}/tags/{{ tag[0] | append: '' | slugify }}" style="text-decoration: none;display: flex;justify-content: space-between;flex-direction: row;width: 100%;">
-                                <div class="my-row">
-                                    <div class="my-title writinglist-title">
-                                        <b>{{ tag[0] }}</b>
-                                    </div>
-                                    <div class="my-category">{{ tag[1] | size }} Posts</div>
-                                </div>
-                            </a>
-                        </div>
+                <ul>
+                    {% for post in site.tags[page.tag] %}
+                      <li>
+                        {{ post.date | date: "%B %d, %Y" }}: <a href="{{ post.url }}">{{ post.title }}</a>
+                      </li>
                     {% endfor %}
-                </div>
+                </ul>
+
+
+                {% assign sortedchalls = site.challs | sort: "category" %}
+                {%- for chall in sortedchalls -%}
+                    <h3>{{ chall.category }}</h3>
+                    <ul>
+                        {% assign categchalls = site.challs | where: "category", chall.category %}
+                        {%- for post in categchalls -%}
+                            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                        {%- endfor -%}
+                    </ul>
+                {%- endfor -%}
+
                 <div class='footer-back'>
                     <a onclick="goBack()">
-                        <h5 class="meta-title
-                        ">← BACK</h5>
+                        <h5 class="meta-title">← BACK</h5>
                     </a>
                 </div>
             </div>
