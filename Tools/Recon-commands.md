@@ -18,7 +18,7 @@ find / -perm -u=s -type f 2>/dev/null
 SP="/home/kali/"; DP="/home/kali/Desktop"; F="foo.txt"; pv -s $(stat -f%z "$SP$F") "$SP$F" > "$DP$F"
 ```
 
-view user-installed apt packages on kali (helps when kali in need of a re-dump)
+view user-installed apt packages
 
 ```bash
 apt list --installed 2>/dev/null | grep -vE "kali\-rolling|gnome\-|Listing\.\.\." | cut -d'/' -f 1 # | grep -vE "<extra filters>"
